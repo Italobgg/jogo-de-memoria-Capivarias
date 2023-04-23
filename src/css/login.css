@@ -1,0 +1,70 @@
+.card-form {
+    background-color: rgba(218, 175, 111, 0.374);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 200px;
+}
+
+.login-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+.login-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.login-header img{
+    margin-top: -100px;
+    width: 400;
+}
+
+.login-header h1 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.login-input {
+    font-family: 'Bruno Ace', cursive;
+    border: 2px solid #333 ;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 15px;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.login-button {
+    font-family: 'Bruno Ace', cursive;
+    background-color: #E2A24C;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #E2A24C ;
+    border-radius: 8px;
+    font-size: 1em;
+    padding: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 335px;
+}
+
+.login-button:disabled {
+    font-family: 'Bruno Ace', cursive;
+    background-color: #b1afac;
+    border: 2px solid #b1afac;
+    cursor: auto;
+}
