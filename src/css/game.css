@@ -28,7 +28,6 @@
 }
 
 .front {
-    background-image: url('../images/capivara-amiga.png');
     transform: rotateY(180deg);
 }
 
@@ -37,6 +36,7 @@
     backface-visibility: hidden;
 }
 
-.card:hover {
+.reavel-card {
     transform: rotateY(180deg);
+
 }
