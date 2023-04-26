@@ -8,7 +8,6 @@ const capivaras = [
   "capivara-capivarias",
   "capivara-coelho",
   "capivara-mae",
-  "capivara-mergulho",
   "capivara-policial",
   "capivara-reflexiva",
   "capivara-walpaper",
@@ -23,30 +22,53 @@ const createElement = (tag, className) => {
 let firstCard = "";
 let secondCard = "";
 
-const checkCards = () => {
+const checkEndGame = () => {
+  const disableCards = document.querySelectorAll(".disable-card");
 
-}
+  if (disableCards.length == 20) {
+    alert("Parabéns, você achou todos os pares !!!");
+  }
+};
+
+const checkCards = () => {
+  const firstCapivara = firstCard.getAttribute("data-capivara");
+  const secondCapivara = secondCard.getAttribute("data-capivara");
+
+  if (firstCapivara == secondCapivara) {
+    firstCard.firstChild.classList.add("disable-card");
+    secondCard.firstChild.classList.add("disable-card");
+    
+
+    firstCard = "";
+    secondCard = "";
+
+    checkEndGame();
+
+  } else {
+    setTimeout(() => {
+      firstCard.classList.remove("reavel-card");
+      secondCard.classList.remove("reavel-card");
+
+      firstCard = "";
+      secondCard = "";
+    }, 500);
+  }
+};
 
 const reavelCard = ({ target }) => {
   if (target.parentNode.className.includes("reavel-card")) {
     return;
-  } else
-
-  if (firstCard == "") {
-
-    target.parentNode.classList.add("reavel-card");
-    firstCard = target.parentNode;
-
-  } else if (secondCard == '') {
-    target.parentNode.classList.add("reavel-card");
-    secondCard = target.parentNode;
   }
 
+  if (firstCard == "") {
+    target.parentNode.classList.add("reavel-card");
+    firstCard = target.parentNode;
+  } else if (secondCard == "") {
+    target.parentNode.classList.add("reavel-card");
+    secondCard = target.parentNode;
 
-  checkCards ();
-
-
-
+    checkCards();
+  }
 };
 
 const createCard = (capivara) => {
@@ -60,7 +82,7 @@ const createCard = (capivara) => {
   card.appendChild(back);
 
   card.addEventListener("click", reavelCard);
-  card.setAttribute('data-capivara', capivara)
+  card.setAttribute("data-capivara", capivara);
 
   return card;
 };
