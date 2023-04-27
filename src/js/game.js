@@ -1,5 +1,6 @@
 const grid = document.querySelector(".grid");
-
+const spanPlayer = document.querySelector(".player");
+const timer = document.querySelector(".timer");
 const capivaras = [
   "capivara-amiga",
   "capivara-amiga2",
@@ -26,7 +27,8 @@ const checkEndGame = () => {
   const disableCards = document.querySelectorAll(".disable-card");
 
   if (disableCards.length == 20) {
-    alert("Parabéns, você achou todos os pares !!!");
+    clearInterval (this.loop)
+    alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML} segundos!`);
   }
 };
 
@@ -37,13 +39,11 @@ const checkCards = () => {
   if (firstCapivara == secondCapivara) {
     firstCard.firstChild.classList.add("disable-card");
     secondCard.firstChild.classList.add("disable-card");
-    
 
     firstCard = "";
     secondCard = "";
 
     checkEndGame();
-
   } else {
     setTimeout(() => {
       firstCard.classList.remove("reavel-card");
@@ -98,4 +98,16 @@ const loadGame = () => {
   });
 };
 
-loadGame();
+const startTimer = () => {
+  this.loop = setInterval(() => {
+    const currentTime = +timer.innerHTML;
+    timer.innerHTML = currentTime + 1;
+  }, 1000);
+};
+
+window.onload = () => {
+  spanPlayer.innerHTML = localStorage.getItem("player");
+
+  startTimer();
+  loadGame();
+};
