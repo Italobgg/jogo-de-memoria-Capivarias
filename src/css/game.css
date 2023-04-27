@@ -1,13 +1,12 @@
 main {
     display: flex;
     flex-direction: column;
-    background-color: rgb(200, 179, 120);
+    background-color: rgb(241, 215, 143);
     background-size: cover;
     width: 100%;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-    padding: 20px 20px 50px;
 }
 
 header {
@@ -17,8 +16,7 @@ header {
     justify-content: space-between;
     background-color: #3a373771;
     font-size: 1.2em;
-    width: 100%;
-    max-width: 800px;
+    width: 80%;
     padding: 30px;
     margin: 0 0 30px;
     border-radius: 5px;
@@ -30,7 +28,7 @@ header {
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
