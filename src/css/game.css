@@ -1,8 +1,9 @@
 main {
     display: flex;
     flex-direction: column;
-    background-color: rgb(241, 215, 143);
-    background-size: cover;
+    background-image: url('../images/capivara-bg2.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
     align-items: center;
